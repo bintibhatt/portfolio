@@ -1,25 +1,45 @@
 import React from "react";
-import { createClient } from "next-sanity";
 
-export default async function ExperiencePage() {
-  const client = createClient({
-    projectId: "qb0ilyn2",
-    dataset: "production",
-    useCdn: false,
-  });
+export default function ExperiencePage() {
+  const experiences = [
+    {
+      title: "Junior Software Engineer",
+      company: "ZURU Tech India Pvt. Ltd.",
+      date: "Aug 2023 - Present",
+      skills: "HTML, CSS, Javascript, SASS, React-JS, Next-JS, Sanity",
+    },
+    {
+      title: "AI-ML Intern",
+      company: "Upsquare Technologies",
+      date: "May 2023 - June 2023",
+      skills: "Python, AI-ML, Flask, Postman, LLMs, Jina-AI, DocArray",
+    },
+    {
+      title: "WebDev Intern",
+      company: "5G India Forum",
+      date: "May 2022 - July 2022",
+      skills: "Jekyll, Markdown, Github-pages",
+    },
+  ];
 
-  const experiences = await client.fetch(
-    `*[_type == "experience"] | order(_createdAt desc) `,
+  const educations = [
     {
-      cache: "no-cache",
-    }
-  );
-  const educations = await client.fetch(
-    `*[_type == "education"] | order(_createdAt desc) `,
+      degree: "Bachelor of Information and Communication Technology",
+      institution: "Marwadi University",
+      date: "2020 - Present",
+    },
     {
-      cache: "no-cache",
-    }
-  );
+      degree: "Higher Secondary Education",
+      institution: "Shakti Schools",
+      date: "2018 - 2020",
+    },
+    {
+      degree: "Secondary Education",
+      institution: "Dholakiya Schools",
+      date: "2007 - 2018",
+    },
+  ];
+
   return (
     <div className="flex flex-col md:flex-row justify-between h-auto md:h-full bg-gray-600 bg-opacity-60 p-6 md:p-16 rounded-b-3xl">
       <div className="mb-8 md:mb-0">
@@ -28,7 +48,7 @@ export default async function ExperiencePage() {
         </h1>
         <ol className="relative border-s border-gray-200 dark:border-gray-300">
           {experiences.map((experience) => (
-            <li className="mb-8 md:mb-10 ms-4">
+            <li key={experience.title} className="mb-8 md:mb-10 ms-4">
               <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-400 dark:bg-gray-900"></div>
               <time className="mb-1 text-sm md:text-md font-normal leading-none text-gray-300 dark:text-gray-300">
                 {experience.date}
@@ -55,7 +75,7 @@ export default async function ExperiencePage() {
         </h1>
         <ol className="relative border-s border-gray-200 dark:border-gray-300">
           {educations.map((education) => (
-            <li className="mb-8 md:mb-10 ms-4">
+            <li key={education.institution} className="mb-8 md:mb-10 ms-4">
               <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-400 dark:bg-gray-900"></div>
               <time className="mb-1 text-sm md:text-md font-normal leading-none text-gray-300 dark:text-gray-300">
                 {education.date}

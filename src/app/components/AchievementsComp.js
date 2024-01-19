@@ -1,20 +1,30 @@
 import React from "react";
-import { createClient } from "next-sanity";
 import Link from "next/link";
 
-export default async function AchievementsPage() {
-  const client = createClient({
-    projectId: "qb0ilyn2",
-    dataset: "production",
-    useCdn: false,
-  });
-
-  const achievements = await client.fetch(
-    `*[_type == "achievement"] | order(_createdAt asc) `,
+export default function AchievementsPage() {
+  const achievements = [
     {
-      cache: "no-cache",
-    }
-  );
+      title: "Microsoft Learn Student Ambassador",
+      date: "March 2023 - Present",
+    },
+    {
+      title: "Deputy Convener - Data Science Club",
+      date: "Aug 2023 - Present",
+    },
+    {
+      title: "Copyright Patent - Web Based Faculty Corner System",
+      date: "July 2023 - Present",
+    },
+    {
+      title: "Design Patent - Food Waste Compost Machine",
+      date: "March 2023 - Present",
+    },
+    {
+      title: "Github Global Campus Student",
+      date: "September 2022 - Present",
+    },
+  ];
+
   return (
     <div className="flex flex-col md:flex-row bg-gray-600 bg-opacity-60 p-6 md:p-16 rounded-b-3xl w-full">
       <div className="w-full">
@@ -23,7 +33,10 @@ export default async function AchievementsPage() {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid:cols-2 xl:grid-cols-3 gap-6 ">
           {achievements.map((achievement) => (
-            <div className="flex items-center bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <div
+              key={achievement.title}
+              className="flex items-center bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+            >
               <div className="flex flex-col justify-between p-4 leading-normal">
                 <h5 className="mb-2 text-lg md:text-xl lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {achievement.title}
