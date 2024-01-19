@@ -1,9 +1,12 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-export default function AboutLayout({
-  children, // will be a page or nested layout
-}) {
+export const metadata = {
+  title: "Binti Bhatt | About",
+  description: "Portfolio website of Binti Bhatt",
+};
+
+export default function AboutLayout({ children }) {
   return (
     <>
       <div className="bg-[url('/assets/images/hero-bg.jpg')] bg-cover">
