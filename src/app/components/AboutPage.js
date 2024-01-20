@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col md:flex-row bg-gray-600 bg-opacity-60 p-8 md:p-10 lg:p-20 rounded-b-3xl">
+    <div className="flex flex-col md:flex-row bg-gray-600 bg-opacity-60 p-8 md:p-10 lg:p-10 rounded-b-3xl">
       <div className="container mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-8">
           About Me

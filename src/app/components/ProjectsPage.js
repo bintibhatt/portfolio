@@ -40,7 +40,7 @@ export default function ProjectsPage() {
     },
   ];
   return (
-    <div className="flex flex-col sm:flex-row h-full bg-gray-600 bg-opacity-60 p-4 sm:p-10 rounded-b-3xl md:p-5 lg:p-10 xl:p-20">
+    <div className="flex flex-col sm:flex-row h-full bg-gray-600 bg-opacity-60 p-4 sm:p-10 rounded-b-3xl md:p-5 lg:p-8 xl:p-20">
       <div className="container">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-8 ">
           My Projects

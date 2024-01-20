@@ -41,7 +41,7 @@ export default function ExperiencePage() {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row justify-between h-auto md:h-full bg-gray-600 bg-opacity-60 p-6 md:p-16 rounded-b-3xl">
+    <div className="flex flex-col md:flex-row justify-between h-auto md:h-full bg-gray-600 bg-opacity-60 p-6 md:p-16 lg:p-10 rounded-b-3xl">
       <div className="mb-8 md:mb-0">
         <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-8 text-center md:text-left">
           My Experiences

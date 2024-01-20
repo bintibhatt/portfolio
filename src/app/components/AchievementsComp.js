@@ -26,7 +26,7 @@ export default function AchievementsPage() {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row bg-gray-600 bg-opacity-60 p-6 md:p-16 rounded-b-3xl w-full">
+    <div className="flex flex-col md:flex-row bg-gray-600 bg-opacity-60 p-6 md:p-16 lg:p-10 rounded-b-3xl w-full">
       <div className="w-full">
         <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-8 text-center md:text-left">
           My Achievements
